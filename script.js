@@ -1,77 +1,118 @@
-function Remera(colorcito, talle){
-  this.color = colorcito
-  this.talle = talle
-
-  this.mostrarRemera = function(){
-    alert("Remera color: " + this.color + "\nTalle: " + this.talle)
-  }
-}
-
-const remeras = [
-  new Remera("rojo", "XL"),
-  new Remera("azul", "XL"),
-  new Remera("verde", "M"),
-  new Remera("blanco", "XS"),
-  new Remera("amarillo", "L")
+// la pagina html y el js aun no estan conectados, lo que se ve en el html es solo el esqueleto de la pagina. y no interactua con nada de lo de este archivo
+const ropa = [
+    {
+        title: "Camisa Femenina Volado",
+        talles: ["XS", "S", "M", "L", "XL"],
+        colores: ["Blanco", "Negro", "Amarillo", "Violeta"],
+        precio: 25000
+    },
+    {
+        title: "Camisa Masculina Clasica",
+        talles: ["XS", "S", "M", "L", "XL"],
+        colores: ["Blanco", "Negro", "Amarillo", "Azul"],
+        precio: 25000
+    },
+    {
+        title: "Jean Femenino Oxford",
+        talles: ["XS", "S", "M", "L", "XL"],
+        colores: ["Azul","Negro","Blanco"],
+        precio: 17000
+    },
+    {
+        title: "Jean Hombre Clasico",
+        talles: ["XS", "S", "M", "L", "XL"],
+        colores: ["Azul","Negro"],
+        precio: 17000
+    },
+    {
+        title: "Vestido Marinero",
+        talles: ["XS", "S", "M", "L", "XL"],
+        colores: ["Blanco", "Negro", "Floreado", "Cuadrille"],
+        precio: 30000
+    }
 ];
 
-function mostrarOpcionesRemeras() {
-  do {
-    const opcionesTipo = prompt("Elige el tipo de vestimenta:\n1. Vestido\n2. Camisa\n3. Remera")
-    const tipoSeleccionado = parseInt(opcionesTipo)
+// buscador, quiero poner en la pagina un buscador que tenga la barra de busqueda y que abajo tenga iconitos de ropa, x ej un dibujo de un vestido y tenga escrito vestudos abajo
+//y q vallan desapareciendo o apareciendo a medida que la persona inserta la palabra
+//quisiera saber si la funciond e buscar prendas con palabra clave sirve como base para hacer eso
+function buscarPrendasPorPalabraClave(palabraClave) {
+    const resultados = ropa.filter((prenda) => {
+        const palabrasClaveTitulo = prenda.title.split(' ').map(word => word.toLowerCase());
+        return palabrasClaveTitulo.includes(palabraClave.toLowerCase());
+    });
 
-    const talleSeleccionado = prompt("Elige el talle (S, M, L, XL):")
-    if ( talleSeleccionado=='s', "m", "l", "xl", "S", "M", "L", "XL") {
+    if (resultados.length == 0) {
+        alert("No se encontraron prendas.");
     } else {
-      alert("Objeto No Encontrado")
-      return
-    }
-    
-  
-    const colorSeleccionado = prompt("Elige el color (Negro, Blanco, Rojo, Azul, Amarillo):")
-    if ( colorSeleccionado=="negro", "blanco", "rojo", "azul", "amarillo", "Negro", "Blanco", "Rojo", "Azul", "Amarillo") {
-    } else {
-      alert("Objeto No Encontrado")
-      return
-    }
-// quise intentar una funcion flecha, me costo mucho y tube q buscar en internet , la dejo asi xq funciona pero cuando quise chequear que realmente estaba bien hecha a traves 
-// del console.log, siempre me arrojo el mensaje de "Error" aunque los parametro los pusiera bien y el prompt arrojara bien el precio. 
-    const remeraElegida = remeras.find(remera =>
-      remera.color.toLowerCase() === colorSeleccionado.toLowerCase() && remera.talle.toLowerCase() === talleSeleccionado.toLowerCase()
-    )
-    if (remeraElegida) {
-      console.log("Color de la prenda elegida: " + colorSeleccionado);
-      console.log("Talle de la prenda elegida: " + talleSeleccionado);
-    } else {
-      console.log("Error");
-    }
-    
+        console.log("Resultados que coinciden con la búsqueda:");
+        resultados.forEach((prenda) => {
+            console.log("Título:", prenda.title);
+            console.log("Talles:", prenda.talles);
+            console.log("Colores:", prenda.colores);
+            console.log("Precio:", prenda.precio);
+            console.log("----------");
+        });
 
-    let precioVestimenta = 0
-    switch (tipoSeleccionado) {
-      case 1: // Vestido
-        precioVestimenta = 10000
-        break;
-      case 2: // Camisa
-        precioVestimenta = 6000
-        break;
-      case 3: // Remera
-        precioVestimenta = 2000
-        break
-      default:
-        alert("Objeto No Encontrado")
-        continue
-    }
+        seleccionarPrenda(resultados);
 
-    if (!remeraElegida) {
-      alert("El precio de la vestimenta es: $" + precioVestimenta)
-    } 
-
-    const continuar = prompt("¿Deseas realizar otra selección? (Sí/No)").toLowerCase()
-    if (continuar !== "si" && continuar !== "sí") {
-      break
+        if (Math.random() < 0.5) {
+            alert("Lo siento, el artículo seleccionado no está disponible en este momento.");
+        } else {
+            alert("Gracias por usar el buscador.");
+        }
     }
-  } while (true)
 }
 
-mostrarOpcionesRemeras()
+do {
+    const palabraClave = prompt("¿Qué prenda deseas buscar?:");
+
+    if (palabraClave) {
+        buscarPrendasPorPalabraClave(palabraClave);
+    } else {
+        alert("Debes ingresar una palabra clave válida.");
+    }
+
+    const realizarOtraBusqueda = prompt("¿Deseas realizar otra búsqueda? (Sí/No)").toLowerCase();
+
+    if (realizarOtraBusqueda !== "si" && realizarOtraBusqueda !== "sí") {
+        alert("Gracias por usar nuestro servicio de búsqueda.");
+        break; 
+    }
+} while (true);
+
+function seleccionarPrenda(resultados) {
+    if (resultados.length === 0) {
+        alert("No hay resultados para seleccionar.");
+        return;
+    }
+
+    const prendaElegida = prompt("Elige una prenda de la lista:\n" + resultados.map(prenda => prenda.title).join("\n"));
+    
+    if (!prendaElegida) {
+        alert("Debes seleccionar una prenda válida.");
+        return;
+    }
+
+    const prendaSeleccionada = resultados.find(prenda => prenda.title.toLowerCase() === prendaElegida.toLowerCase());
+
+    if (!prendaSeleccionada) {
+        alert("La prenda seleccionada no se encuentra en la lista.");
+        return;
+    }
+
+    const talleElegido = prompt("Elige un talle de la lista:\n" + prendaSeleccionada.talles.map(talle => talle.toLowerCase()).join("\n"));
+    const colorElegido = prompt("Elige un color de la lista:\n" + prendaSeleccionada.colores.map(color => color.toLowerCase()).join("\n"));
+
+    if (!prendaSeleccionada.talles.map(talle => talle.toLowerCase()).includes(talleElegido.toLowerCase()) || 
+        !prendaSeleccionada.colores.map(color => color.toLowerCase()).includes(colorElegido.toLowerCase())) {
+        alert("El talle o color elegido no es válido para esta prenda.");
+        return;
+    }
+
+    alert(`Has seleccionado la siguiente prenda:
+    - Prenda: ${prendaSeleccionada.title}
+    - Talle: ${talleElegido}
+    - Color: ${colorElegido}
+    - Precio: ${prendaSeleccionada.precio}`);
+}
+
