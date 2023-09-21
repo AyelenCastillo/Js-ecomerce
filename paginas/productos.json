@@ -1,0 +1,109 @@
+[
+  { 
+      "id": 1, 
+      "nombre": "Camisa Hombre Clasica",
+      "precio": 10000,
+      "imagen": "../imagenes/camisahombreclasica.jpg",
+      "talle": ["XS","S","M","L","XL"],
+      "colores": [
+          { "nombre": "Negro", "codigo": "#000000" },
+          { "nombre": "Blanco", "codigo": "#FFFFFF" },
+          { "nombre": "Rojo", "codigo": "#E61102" },
+          { "nombre": "Azul", "codigo": "#050F80" },
+          { "nombre": "Beige", "codigo": "#BFA567" }
+      ]
+  },
+  { 
+      "id": 2, 
+      "nombre": "Camisa Volado Mujer",
+      "precio": 12000,
+      "imagen": "../imagenes/camisavoladomujer.jpg",
+      "talle": ["XS","S","M","L","XL"],
+      "colores": [
+          { "nombre": "Negro", "codigo": "#000000" },
+          { "nombre": "Blanco", "codigo": "#FFFFFF" },
+          { "nombre": "Rosa", "codigo": "#F7D7FC" },
+          { "nombre": "Celeste", "codigo": "#ADEDFF" },
+          { "nombre": "Beige", "codigo": "#BFA567" }
+      ]
+  },
+  { 
+      "id": 3, 
+      "nombre":  "Jean Hombre Clasico",
+      "precio": 15000,
+      "imagen":  "../imagenes/jeanclasicohombre.jpg",
+      "talle": ["XS","S","M","L","XL"],
+      "colores": [
+          { "nombre": "Negro", "codigo": "#000000" },
+          { "nombre": "Azul", "codigo": "#050F80" }
+      ]
+  },
+  { 
+      "id": 4, 
+      "nombre":  "Jean Mujer Oxford",
+      "precio": 20000,
+      "imagen":  "../imagenes/jeanmujeroxford.jpg",
+      "talle": ["XS","S","M","L","XL"],
+      "colores": [
+          { "nombre": "Negro", "codigo": "#000000" },
+          { "nombre": "Blanco", "codigo": "#FFFFFF" },
+          { "nombre": "Azul", "codigo": "#0000FF" }
+      ]
+  },
+  { 
+      "id": 5, 
+      "nombre":  "Chomba Clasica Hombre",
+      "precio": 15000,
+      "imagen":  "../imagenes/chombahombreclasica.jpg",
+      "talle": ["XS","S","M","L","XL"],
+      "colores": [
+          { "nombre": "Negro", "codigo": "#000000" },
+          { "nombre": "Blanco", "codigo": "#FFFFFF" },
+          { "nombre": "Rojo", "codigo": "#E61102" },
+          { "nombre": "Azul", "codigo": "#050F80" },
+          { "nombre": "Beige", "codigo": "#BFA567" }
+      ]
+  },
+  { 
+    "id": 6, 
+    "nombre":  "Vestido Mujer",
+    "precio": 30000,
+    "imagen":  "../imagenes/vestidomujer.jpg",
+    "talle": ["XS","S","M","L","XL"],
+    "colores": [
+        { "nombre": "Negro", "codigo": "#000000" },
+        { "nombre": "Blanco", "codigo": "#FFFFFF" },
+        { "nombre": "Lila", "codigo": "#CF8BFF" },
+        { "nombre": "Azul", "codigo": "#2755C2" },
+        { "nombre": "Beige", "codigo": "#BFA567" }
+    ]
+},
+{ 
+    "id": 7, 
+    "nombre":  "Remera Hombre Clasica",
+    "precio": 8000,
+    "imagen":  "../imagenes/remerahombre.jpg",
+    "talle": ["XS","S","M","L","XL"],
+    "colores": [
+        { "nombre": "Negro", "codigo": "#000000" },
+        { "nombre": "Blanco", "codigo": "#FFFFFF" },
+        { "nombre": "Rojo", "codigo": "#E61102" },
+        { "nombre": "Azul", "codigo": "#050F80" },
+        { "nombre": "Beige", "codigo": "#BFA567" }
+    ]
+},
+{ 
+    "id": 8, 
+    "nombre":  "Remera Mujer Clasica",
+    "precio": 8000,
+    "imagen":  "../imagenes/remeramujer.jpg",
+    "talle": ["XS","S","M","L","XL"],
+    "colores": [
+        { "nombre": "Negro", "codigo": "#000000" },
+        { "nombre": "Blanco", "codigo": "#FFFFFF" },
+        { "nombre": "Lila", "codigo": "#CF8BFF" },
+        { "nombre": "Azul", "codigo": "#2755C2" },
+        { "nombre": "Beige", "codigo": "#BFA567" }
+    ]
+}
+]
