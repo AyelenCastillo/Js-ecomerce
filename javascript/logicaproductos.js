@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             //FILTRO
             aplicarFiltro.addEventListener('click', function () {
                 const colorSeleccionado = filtroColor.value;
-                // Borra las tarjetas actuales antes de aplicar el filtro
+               
                 while (articuloCartas.firstChild) {
                     articuloCartas.removeChild(articuloCartas.firstChild);
                 }
