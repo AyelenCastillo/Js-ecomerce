@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Función para crear una tarjeta de producto
+// CREAR TARJETAS
     function crearTarjetaProducto(producto) {
         const nuevaTarjeta = document.createElement('div');
         nuevaTarjeta.innerHTML = `
@@ -39,17 +39,17 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         return nuevaTarjeta;
     }
-
+//BUSCAR EN JSON
     fetch('productos.json')
         .then(response => response.json())
         .then(data => {
             productos = data;
-
+ 
+            //BUSCADOR COLORES
             const coloresUnicos = [...new Set(productos.flatMap(producto => producto.colores.map(color => color.nombre)))];
             
-            // Agrega la opción "Todos los colores" como opción por defecto
             const optionTodosColores = document.createElement('option');
-            optionTodosColores.value = ''; // Valor vacío
+            optionTodosColores.value = '';
             optionTodosColores.text = 'Todos los colores';
             filtroColor.appendChild(optionTodosColores);
             
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 option.text = color;
                 filtroColor.appendChild(option);
             });
-
+            //FILTRO
             aplicarFiltro.addEventListener('click', function () {
                 const colorSeleccionado = filtroColor.value;
                 // Borra las tarjetas actuales antes de aplicar el filtro
@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             });
 
-            // Aplica el filtro por defecto al cargar la página (mostrar todos los productos)
             aplicarFiltro.click();
         })
         .catch(error => {
