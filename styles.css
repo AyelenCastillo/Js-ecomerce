@@ -147,8 +147,8 @@ nav p {
   top: 0;
   right: 0;
   height: 100%;
-  width: 300px; /* Ancho del carrito en el lateral derecho */
-  overflow-y: auto; /* Agregar barra de desplazamiento vertical si es necesario */
+  width: 300px; 
+  overflow-y: auto; 
   z-index: 999;
   display: none;
 }
@@ -233,7 +233,7 @@ nav p {
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
-  max-height: 80vh; /* Cambié 700px por 70vh para que sea relativo al viewport */
+  max-height: 80vh; 
 }
 
 /* Estilos para el botón de cerrar */

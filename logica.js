@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     actualizarElCarrito();
 
                     // Mostrar notificación de éxito
-        mostrarNotificacion(`${producto.nombre} agregado al carrito`, 3000); // Notificación de éxito
+        mostrarNotificacion(`${producto.nombre} agregado al carrito`, 3000); 
                 }
             }
 
@@ -330,7 +330,7 @@ fechaVencimiento.addEventListener("input", function () {
   });
 
 
-// Función para verificar si todos los campos están completos y el Plan Z (Todo en uno)
+// Función para verificar si todos los campos están completos y el Plan Z 
 function verificarCamposYPlanZ() {
     const numeroTarjeta = document.getElementById("numeroTarjetaInput").value;
     const nombreTitular = document.getElementById("nombreTitularTarjeta").value;
