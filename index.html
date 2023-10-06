@@ -1,63 +1,106 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.11.0/toastify.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.11.0/toastify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Glams</title>
 </head>
 <body>
-<video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/fashion.jpg" playsinline autoplay muted loop>
-<source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/fashion.webm" type="video/webm">
-</video>
-<header>
-    <h1>Glams</h1>
-    <nav>
-    <a href="index.html">Home</a>  
-    <a href="./paginas/productos.html">Productos</a>
-    <a href="./paginas/carrito.html">Carrito</a>
+  <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/fashion.jpg" playsinline autoplay muted loop>
+  <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/fashion.webm" type="video/webm">
+  </video>
+  <header>
+      <h1>Glams</h1>
+      <nav>
+      <p>Productos de Indumentaria Femenina y Masculina</p>
+      </nav>
     </header>
+    <section class="descuentos">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" id="uno">
+            <h3>Descuento del 20%</h3>
+            <p>Ingresa el código "PRIMAVERA2023" al comprar para obtener un 20% de descuento en la nueva temporada primavera 2023.</p>
+          </div>
+          <div class="swiper-slide" id="dos">
+            <h3>Descuento del 10%</h3>
+            <p>Obtén un 10% de descuento en tu compra al pagar con tarjeta de débito en un solo pago de todos los bancos de la República Argentina.</p>
+          </div>
+          <div class="swiper-slide" id="tres">
+            <h3>Descuento del 25%</h3>
+            <p>Disfruta de un 25% de descuento al abonar tu compra en 3 cuotas con tarjeta de crédito bancaria.</p>
+          </div>
+          <div class="swiper-slide" id="cuatro">
+            <h3>Plan Z con Tarjeta Naranja</h3>
+            <p>Con Tarjeta Naranja, puedes acceder a opciones de pago flexibles y convenientes para tu compra.</p>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
 
-   <section>
-    
-   </section>
-    
-    <footer class="fixed-footer">
-        <div class="container">
-        <div class="column"> 
-        <h1>Glams</h1>
-            <div class="adr">
-          <h3>En algun lugar...</h3>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22088.729621933704!2d-58.39673201798283!3d-34.6165677379896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb4c9c66ad51%3A0x423755355243c81d!2sTiendita%20random!5e0!3m2!1ses!2sar!4v1693841866038!5m2!1ses!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        </div>
-        <div class="column">
-            <h2>Media</h2>
-            <h3>Facebook</h3>
-            <h3>Instagram</h3>
-            <h3>Tik Tok</h3>
-        </div>
-        <div class="column">
-            <h2>Productos</h2>
-            <h3>Indumentaria Femenina</h3>
-            <h3>Insumentaria Masculina</h3>
-    </div>
-    <div class="column">
-        <h2>Contacto</h2>
-        <h3>glams@meinventeesto.com</h3>
-        <h3>4463-5897</h3>
-    </div>
-    </div>
+     <input type="text" id="buscador" placeholder="Buscar productos">
+     <div id="botonCarrito" class="boton-carrito">
+      <button id="mostrarCarrito"><img src="./imagenes/carrito.png" alt="Carrito"></button>
+  </div>
 
-        <div class="legal">
-            <p>&copy; 2023 Something. All rights reserved.</p>
-            <div class="legal__links">
-            <span>Made with <span class="heart">♥</span> Proyect CoderHouse Course 47035</span>
+    <div class="container">
+        <div class="productos" id="productos"></div>
+        <div class="carrito" id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito"></ul>
+            <div class="carrito-vacio" id="carrito-vacio">
+                El carrito está vacío.
             </div>
+            <button class="finalizar-compra" id="finalizarCompra">Finalizar Compra</button>
         </div>
-    
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script  type="module" src="./script.js"></script>
+    </div>
+    <div id="modalContainer"></div>
+
+    <footer class="fixed-footer">
+      <div class="container">
+      <div class="column"> 
+      <h1>Glams</h1>
+          <div class="adr">
+        <h3>En algun lugar...</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22088.729621933704!2d-58.39673201798283!3d-34.6165677379896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb4c9c66ad51%3A0x423755355243c81d!2sTiendita%20random!5e0!3m2!1ses!2sar!4v1693841866038!5m2!1ses!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      </div>
+      <div class="column">
+          <h2>Media</h2>
+          <h3>Facebook</h3>
+          <h3>Instagram</h3>
+          <h3>Tik Tok</h3>
+      </div>
+      <div class="column">
+          <h2>Productos</h2>
+          <h3>Indumentaria Femenina</h3>
+          <h3>Insumentaria Masculina</h3>
+  </div>
+  <div class="column">
+      <h2>Contacto</h2>
+      <h3>glams@meinventeesto.com</h3>
+      <h3>4463-5897</h3>
+  </div>
+  </div>
+      <div class="legal">
+          <p>&copy; 2023 Something. All rights reserved.</p>
+          <div class="legal__links">
+          <span>Made with <span class="heart">♥</span> Proyect CoderHouse Course 47035</span>
+          </div>
+      </div>
+  
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script src="logica.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>

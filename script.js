@@ -1,1 +1,0 @@
-// a futuro aca pondre un side que pase descuentos con tarjetas en la pag "Home" (index.html)
