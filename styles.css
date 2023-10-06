@@ -263,6 +263,9 @@ nav p {
   height: 200px;
 }
 
+.swal-custom {
+  z-index: 10002;
+}
 
 /* Footer*/
 footer {

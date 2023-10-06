@@ -392,14 +392,13 @@ function verificarCamposYPlanZ() {
 // Agregar un evento click al botón "Confirmar Compra" y verificar todo
 const confirmarCompraBtn = document.getElementById("confirmarCompraBtn");
 confirmarCompraBtn.addEventListener("click", function (event) {
-    event.preventDefault(); // Evita que el formulario se envíe
+    event.preventDefault(); 
     verificarCamposYPlanZ();
 });
 
 }
 
-
-// Llama a la función para generar el modal cuando se cargue la página
+// Llama a la función para generar el modal
 generarModalCompra();
 
             
