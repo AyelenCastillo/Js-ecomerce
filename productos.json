@@ -3,7 +3,7 @@
       "id": 1, 
       "nombre": "Camisa Hombre Clasica",
       "precio": 10000,
-      "imagen": "../imagenes/camisahombreclasica.jpg",
+      "imagen": "./imagenes/camisahombreclasica.jpg",
       "talle": ["XS","S","M","L","XL"],
       "colores": [
           { "nombre": "Negro", "codigo": "#000000" },
@@ -17,7 +17,7 @@
       "id": 2, 
       "nombre": "Camisa Volado Mujer",
       "precio": 12000,
-      "imagen": "../imagenes/camisavoladomujer.jpg",
+      "imagen": "./imagenes/camisavoladomujer.jpg",
       "talle": ["XS","S","M","L","XL"],
       "colores": [
           { "nombre": "Negro", "codigo": "#000000" },
@@ -31,7 +31,7 @@
       "id": 3, 
       "nombre":  "Jean Hombre Clasico",
       "precio": 15000,
-      "imagen":  "../imagenes/jeanclasicohombre.jpg",
+      "imagen":  "./imagenes/jeanclasicohombre.jpg",
       "talle": ["XS","S","M","L","XL"],
       "colores": [
           { "nombre": "Negro", "codigo": "#000000" },
@@ -42,7 +42,7 @@
       "id": 4, 
       "nombre":  "Jean Mujer Oxford",
       "precio": 20000,
-      "imagen":  "../imagenes/jeanmujeroxford.jpg",
+      "imagen":  "./imagenes/jeanmujeroxford.jpg",
       "talle": ["XS","S","M","L","XL"],
       "colores": [
           { "nombre": "Negro", "codigo": "#000000" },
@@ -54,7 +54,7 @@
       "id": 5, 
       "nombre":  "Chomba Clasica Hombre",
       "precio": 15000,
-      "imagen":  "../imagenes/chombahombreclasica.jpg",
+      "imagen":  "./imagenes/chombahombreclasica.jpg",
       "talle": ["XS","S","M","L","XL"],
       "colores": [
           { "nombre": "Negro", "codigo": "#000000" },
@@ -68,7 +68,7 @@
     "id": 6, 
     "nombre":  "Vestido Mujer",
     "precio": 30000,
-    "imagen":  "../imagenes/vestidomujer.jpg",
+    "imagen":  "./imagenes/vestidomujer.jpg",
     "talle": ["XS","S","M","L","XL"],
     "colores": [
         { "nombre": "Negro", "codigo": "#000000" },
@@ -82,7 +82,7 @@
     "id": 7, 
     "nombre":  "Remera Hombre Clasica",
     "precio": 8000,
-    "imagen":  "../imagenes/remerahombre.jpg",
+    "imagen":  "./imagenes/remerahombre.jpg",
     "talle": ["XS","S","M","L","XL"],
     "colores": [
         { "nombre": "Negro", "codigo": "#000000" },
@@ -96,7 +96,7 @@
     "id": 8, 
     "nombre":  "Remera Mujer Clasica",
     "precio": 8000,
-    "imagen":  "../imagenes/remeramujer.jpg",
+    "imagen":  "./imagenes/remeramujer.jpg",
     "talle": ["XS","S","M","L","XL"],
     "colores": [
         { "nombre": "Negro", "codigo": "#000000" },
